@@ -21,6 +21,7 @@ export default function Produto() {
   const [fornecedorID, setFornecedorID] = useState();
   const [newFornecedorID, setNewFornecedorID] = useState();
   const [produtos, setProdutos] = useState();
+  const [fornecedores, setFornecedores] = useState();
   const path = 'produto';
   const type = 'api/';
 
@@ -30,7 +31,14 @@ export default function Produto() {
     if (response.data) setProdutos(response.data);
   };
 
+  async function getFornecedores() {
+    const response = await api.get(`${type}fornecedor`);
+
+    if(response.data) setFornecedores(response.data);
+  }
+
   useEffect(() => {
+    getFornecedores();
     getProdutos();
   }, []);
 
@@ -95,7 +103,14 @@ export default function Produto() {
           <input value={newReferencia} placeholder="Referencia do Produto..." onChange={e => setNewReferencia(e.target.value)} />
           <input value={newDescricao} placeholder="Descricao do Produto..." onChange={e => setNewDescricao(e.target.value)} />
           <input value={newValor} type="number" onChange={e => setNewValor(e.target.value)} />
-          <input value={newFornecedorID} placeholder="Fornecedor do Produto..." onChange={e => setNewFornecedorID(e.target.value)} />
+          <select value={newFornecedorID} onChange={e => setNewFornecedorID(e.target.value)}>
+            <option value="">Nenhum selecionado</option>
+            {
+              fornecedores && fornecedores.map((fornecedor, key) => (
+                <option key={key} value={fornecedor._id}>{fornecedor.nome}</option>
+              ))
+            }
+          </select>
           <button onClick={e => handleSubmit(e)}>Salvar</button>
         </form>
         <ul>
@@ -125,7 +140,14 @@ export default function Produto() {
               <input value={referencia} onChange={e => setReferencia(e.target.value)} />
               <input value={descricao} onChange={e => setDescricao(e.target.value)} />
               <input value={valor} type="number" onChange={e => setValor(e.target.value)} />
-              <input value={fornecedorID} onChange={e => setFornecedorID(e.target.value)} />
+              <select value={fornecedorID} onChange={e => setFornecedorID(e.target.value)}>
+                <option value="">Nenhum selecionado</option>
+                {
+                  fornecedores && fornecedores.map((fornecedor, key) => (
+                    <option key={key} value={fornecedor._id}>{fornecedor.nome}</option>
+                  ))
+                }
+              </select>
 
               <Button onClick={() => handleEdit()} size="big" type="submit">Salvar</Button>
               <Button onClick={() => handleModal()} size="small" color="gray">Cancelar</Button>
