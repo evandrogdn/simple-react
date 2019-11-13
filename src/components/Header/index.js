@@ -6,7 +6,7 @@ const Header = () => (
     <Container>
         <Content>
             <nav>
-                <Link></Link>
+                <Link to="/estoque">Estoque</Link>
             </nav>
         </Content>
     </Container>

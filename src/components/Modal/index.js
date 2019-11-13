@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Container, Contet } from './styles';
+import { Container, Content } from './styles';
 
 const Modal = ({children, size}) => (
     <Container>
