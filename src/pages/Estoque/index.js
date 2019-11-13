@@ -54,9 +54,10 @@ export default function Estoque(){
     };
 
     async function handleDelete(rowIndex){
+        console.log(rowIndex)
         getHandleDelete(rowIndex);
-        let retorno = await api.delete(`${type}${path}/${rowIndex}`);
         toast.success("Estoque removido com sucesso!");
+        await api.delete(`${type}${path}/${rowIndex}`);
     };
 
     async function getHandleEdit({_id, produtoID, quantidade, ativo}){
@@ -106,7 +107,7 @@ export default function Estoque(){
                                     <MdModeEdit size={20} onClick={() => getHandleEdit(estoque)} />
                                 </ButtonIcon>
                                 <ButtonIcon>
-                                    <MdDelete size={20} onClick={() => getHandleDelete(estoque._id)} />
+                                    <MdDelete size={20} onClick={() => handleDelete(estoque._id)} />
                                 </ButtonIcon>
                                 </strong>
                             </EstoqueStyle>    
