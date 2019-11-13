@@ -11,6 +11,10 @@ export const Container = styled.div`
     margin-left: 0;
     justify-content: space-between;
     align-items: center;
+    label {
+      padding-right: 10px;
+      color: #FFF;
+    }
     input {
       max-width: auto;
       background: #eee;

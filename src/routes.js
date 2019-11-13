@@ -6,11 +6,13 @@ import Fornecedor from "./pages/Fornecedor";
 import Produto from "./pages/Produto";
 import Provisao from "./pages/Provisao";
 import UnidadeMedida from "./pages/UnidadeMedida";
+import Home from "./pages/Home";
 
 export default function Routes() {
     return (
         <BrowserRouter>
             <Switch>
+                <Route path="/" exact component={Home} />
                 <Route path="/estoque" exact component={Estoque} />
                 <Route path="/fornecedor" exact component={Fornecedor} />
                 <Route path="/produto" exact component={Produto} />
