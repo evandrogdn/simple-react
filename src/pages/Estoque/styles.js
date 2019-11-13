@@ -20,6 +20,14 @@ export const Container = styled.div`
       margin: 10px 10px;
       padding: 10px 10px;
     }
+    select{
+      width: 300px;
+      background: #eee;
+      border: none;
+      border-radius: 4px;
+      margin: 10px 10px;
+      padding: 10px 10px;
+    }
     button{
       border-radius: 4px;
       width: 100px;
