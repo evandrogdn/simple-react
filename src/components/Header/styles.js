@@ -22,6 +22,7 @@ export const Content = styled.div`
             height: 50px;
         }
         a{
+            padding-left: 12px;
             font-weight: bold;
             color: #eee;
         }
