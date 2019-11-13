@@ -21,6 +21,7 @@ export default function Provisao() {
   const [provisaoAtiva, setProvisaoAtiva] = useState();
   const [newProvisaoAtiva, setNewProvisaoAtiva] = useState(false);
   const [provisoes, setProvisoes] = useState();
+  const [estoques, setEstoques] = useState();
   const path = 'provisao';
   const type = 'api/';
 
@@ -30,8 +31,15 @@ export default function Provisao() {
     if (response.data) setProvisoes(response.data);
   };
 
+  async function getEstoques() {
+    const response = await api.get(`${type}estoque`);
+
+    if (response.data) setEstoques(response.data);
+  }
+
   useEffect(() => {
     getProvisoes();
+    getEstoques();
   }, []);
 
   async function handleSubmit(e){
@@ -92,7 +100,14 @@ export default function Provisao() {
       <Header />
       <Container>
         <form>
-          <input value={newEstoqueID} placeholder="Referencia de estoque..." onChange={e => setNewEstoqueID(e.target.value)} />
+          <select value={newEstoqueID} onChange={e => setNewEstoqueID(e.target.value)}>
+            <option value="">Nenhum selecionado</option>
+            {
+              estoques && estoques.map((estoque, key) => (
+                <option key={key} value={estoque._id}>{estoque._id}</option>
+              ))
+            }
+          </select>
           <input value={newEstoqueMinimo} type="number" onChange={e => setNewEstoqueMinimo(e.target.value)} />
           <input value={newEstoqueMaximo} type="number" onChange={e => setNewEstoqueMaximo(e.target.value)} />
           <input id="checkbox" checked={newProvisaoAtiva} type="checkbox" onChange={e => setNewProvisaoAtiva(e.target.checked)} />
@@ -123,10 +138,17 @@ export default function Provisao() {
         </ul>
         { isModalOpen && (
           <Modal>
-            <h1>Edição de produto</h1>
+            <h1>Edição de provisão</h1>
             <form>
               <span>Referencia de estoque</span>
-              <input value={estoqueID} placeholder="Referencia de estoque..." onChange={e => setEstoqueID(e.target.value)} />
+              <select value={estoqueID} onChange={e => setEstoqueID(e.target.value)}>
+                <option value="">Nenhum selecionado</option>
+                {
+                  estoques && estoques.map((estoque, key) => (
+                    <option key={key} value={estoque._id}>{estoque._id}</option>
+                  ))
+                }
+              </select>
               <span>Estoque Minimo</span>
               <input value={estoqueMinimo} type="number" onChange={e => setEstoqueMinimo(e.target.value)} />
               <span>Estoque Máximo</span>
