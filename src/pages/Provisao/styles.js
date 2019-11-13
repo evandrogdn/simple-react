@@ -16,15 +16,18 @@ export const Container = styled.div`
       color: #FFF;
     }
     input {
-      max-width: auto;
+      width: 700px;
       background: #eee;
       border: none;
       border-radius: 4px;
       margin: 10px 10px;
       padding: 10px 10px;
     }
+    input[type="checkbox"] {
+      width: 20px;
+    }
     select{
-      width: 200px;
+      width: 700px;
       background: #eee;
       border: none;
       border-radius: 4px;
@@ -32,11 +35,17 @@ export const Container = styled.div`
       padding: 10px 10px;
     }
     button{
+      float: right;
       border-radius: 4px;
       width: 100px;
       border: none;
       height: 36px;
       background: #fff;
+    }
+    span {
+      color: #FFF
+      display: block;
+      padding: 5px 10px;
     }
   }
 `;

@@ -80,7 +80,9 @@ export default function UnidadeMedida() {
       <Header />
       <Container>
         <form>
+          <span>Sigla</span>
           <input value={newSigla} placeholder="Sigla da unidade de medida..." onChange={e => setNewSigla(e.target.value)} />
+          <span>Descrição</span>
           <input value={newDescricao} placeholder="Descricao da unidade de medida..." onChange={e => setNewDescricao(e.target.value)} />
 
           <button onClick={e => handleSubmit(e)}>Salvar</button>

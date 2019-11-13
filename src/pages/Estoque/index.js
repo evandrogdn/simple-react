@@ -95,6 +95,7 @@ export default function Estoque(){
       <Header />
       <Container>
         <form>
+          <span>Produto</span>
           <select value={newProdutoID} onChange={e => setNewProdutoID(e.target.value)}>
             <option value="">Nenhum selecionado</option>
             {
@@ -103,7 +104,8 @@ export default function Estoque(){
               ))
             }
           </select>
-          <input value={newQuantidade} placeholder="Quantidade..." onChange={e => setNewQuantidade(e.target.value)} />
+          <span>Quantidade</span>
+          <input value={newQuantidade} placeholder="Quantidade..." onChange={e => setNewQuantidade(e.target.value)} /> <br/>
           <input id="checkbox" checked={newAtivo} type="checkbox" onChange={e => setNewAtivo(e.target.checked)} />
           <label htmlFor="checkbox">Produto ativo?</label>
 
@@ -143,6 +145,7 @@ export default function Estoque(){
               </select>
               <span>Quantidade</span>
               <input value={quantidade} onChange={e => setQuantidade(e.target.value)} />
+              <br/>
               <label htmlFor="checkbox">Produto ativo?</label>
               <input id="checkbox" checked={ativo} type="checkbox" onChange={e => setAtivo(e.target.checked)} />
 

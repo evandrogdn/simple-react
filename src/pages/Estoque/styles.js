@@ -9,11 +9,10 @@ export const Container = styled.div`
   form {
     margin-top: 30px;
     margin-left: 0;
-    display: flex;
     justify-content: space-between;
     align-items: center;
     input {
-      max-width: auto;
+      width: 700px;
       background: #eee;
       border: none;
       border-radius: 4px;
@@ -21,7 +20,7 @@ export const Container = styled.div`
       padding: 10px 10px;
     }
     select{
-      width: 300px;
+      width: 700px;
       background: #eee;
       border: none;
       border-radius: 4px;
@@ -34,6 +33,18 @@ export const Container = styled.div`
       border: none;
       height: 36px;
       background: #fff;
+      float: right;
+    }
+    input[type="checkbox"] {
+      width: 20px;
+    }
+    span {
+      color: #FFF
+      display: block;
+      padding: 5px 10px;
+    }
+    label {
+      color: #FFF;
     }
   }
 `;

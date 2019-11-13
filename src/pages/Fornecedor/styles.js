@@ -9,15 +9,21 @@ export const Container = styled.div`
   form {
     margin-top: 20px;
     margin-left: 0;
-    justify-content: space-between;
-    align-items: center;
+    
     input {
-      max-width: auto;
+      width: 370px;
       background: #eee;
       border: none;
       border-radius: 4px;
       margin: 10px 10px;
       padding: 10px 10px;
+    }
+    div#container-flex {
+      display: flex;
+    }
+    div.flex-container {
+      display: flex;
+      flex-direction: column; 
     }
     button{
       border-radius: 4px;
@@ -25,6 +31,11 @@ export const Container = styled.div`
       border: none;
       height: 36px;
       background: #fff;
+      float: right;
+    }
+    span {
+      color: #FFF
+      padding: 5px 10px;
     }
   }
 `;

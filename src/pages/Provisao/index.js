@@ -100,6 +100,7 @@ export default function Provisao() {
       <Header />
       <Container>
         <form>
+          <span>Referencia de Estoque: </span>
           <select value={newEstoqueID} onChange={e => setNewEstoqueID(e.target.value)}>
             <option value="">Nenhum selecionado</option>
             {
@@ -108,8 +109,10 @@ export default function Provisao() {
               ))
             }
           </select>
+          <span>Estoque Minimo: </span>
           <input value={newEstoqueMinimo} type="number" onChange={e => setNewEstoqueMinimo(e.target.value)} />
-          <input value={newEstoqueMaximo} type="number" onChange={e => setNewEstoqueMaximo(e.target.value)} />
+          <span>Estoque Máximo: </span>
+          <input value={newEstoqueMaximo} type="number" onChange={e => setNewEstoqueMaximo(e.target.value)} /> <br/>
           <input id="checkbox" checked={newProvisaoAtiva} type="checkbox" onChange={e => setNewProvisaoAtiva(e.target.checked)} />
           <label htmlFor="checkbox">Provisao ativa?</label>
 

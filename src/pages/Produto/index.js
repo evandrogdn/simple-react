@@ -100,9 +100,13 @@ export default function Produto() {
       <Header />
       <Container>
         <form>
+          <span>Referência</span>
           <input value={newReferencia} placeholder="Referencia do Produto..." onChange={e => setNewReferencia(e.target.value)} />
+          <span>Descricao</span>
           <input value={newDescricao} placeholder="Descricao do Produto..." onChange={e => setNewDescricao(e.target.value)} />
+          <span>Valor</span>
           <input value={newValor} type="number" onChange={e => setNewValor(e.target.value)} />
+          <span>Fornecedor</span>
           <select value={newFornecedorID} onChange={e => setNewFornecedorID(e.target.value)}>
             <option value="">Nenhum selecionado</option>
             {

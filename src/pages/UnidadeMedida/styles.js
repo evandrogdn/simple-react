@@ -12,7 +12,7 @@ export const Container = styled.div`
     justify-content: space-between;
     align-items: center;
     input {
-      max-width: auto;
+      width: 700px;
       background: #eee;
       border: none;
       border-radius: 4px;
@@ -25,6 +25,12 @@ export const Container = styled.div`
       border: none;
       height: 36px;
       background: #fff;
+      float: right;
+    }
+    span {
+      color: #FFF
+      display: block;
+      padding: 5px 10px;
     }
   }
 `;
