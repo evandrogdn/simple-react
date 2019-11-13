@@ -133,7 +133,14 @@ export default function Estoque(){
             <h1>Edição de estoque</h1>
             <form>
               <span>ID do Produto</span>
-              <input value={produtoID} onChange={e => setProdutoID(e.target.value)} />
+              <select value={produtoID} onChange={e => setProdutoID(e.target.value)}>
+                <option value="">Nenhum selecionado</option>
+                {
+                  produtos && produtos.map((produto, key) => (
+                    <option key={key} value={produto._id}>{produto.descricao}</option>
+                  ))
+                }
+              </select>
               <span>Quantidade</span>
               <input value={quantidade} onChange={e => setQuantidade(e.target.value)} />
               <label htmlFor="checkbox">Produto ativo?</label>
