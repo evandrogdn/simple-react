@@ -43,7 +43,7 @@ export default function Produto() {
       valor: newValor,
       fornecedorID: newFornecedorID
     });
-    toast.success("Fornecedor cadastrado com sucesso!");
+    toast.success("Produto cadastrado com sucesso!");
     setNewReferencia('');
     setNewDescricao('');
     setNewValor(0);
@@ -58,7 +58,7 @@ export default function Produto() {
 
   async function handleDelete(rowIndex){
     getHandleDelete(rowIndex);
-    toast.success("Fornecedor removido com sucesso!");
+    toast.success("Produto removido com sucesso!");
     await api.delete(`${type}${path}/${rowIndex}`);
   };
 
@@ -78,7 +78,7 @@ export default function Produto() {
       valor: valor,
       fornecedorID: fornecedorID
     });
-    toast.success("Fornecedor alterado com sucesso!");
+    toast.success("Produto alterado com sucesso!");
     setIsModalOpen(!isModalOpen);
     getProdutos();
   }
