@@ -29,20 +29,20 @@ export const Content = styled.div`
         flex-direction: column;
         align-items: stretch;
         > span{
-            color: #0000;
+            color: #FFF;
             font-size: 14px;
             line-height: 16px;
             font-weight: 600;
-            margin-top: 15px;
+            margin-top: 5px;
         }
         > input{
             height: 40px;
-            padding: 10px;
+            padding: 5px;
             border-radius: 3px;
             border: 1px solid rgba(0, 0, 0, 0.3);
             background-color: rgba(0, 0, 0, 0.2);
             color: rgba(0, 0, 0, 0.9);  
-            margin-top: 8px;
+            margin-top: 3px;
             transition: border 0.15s ease;
             font-size: 16px;
             &:focus{
