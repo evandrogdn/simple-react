@@ -8,7 +8,6 @@ import Button from '../../styles/components/button';
 import { api } from '../../services/api';
 
 import { Container, FornecedorStyle, ButtonIcon } from './styles';
-import {EstoqueStyle} from "../Estoque/styles";
 
 export default function Fornecedor() {
     const [isModalOpen, setIsModalOpen] = useState(false);
