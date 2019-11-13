@@ -99,17 +99,17 @@ export default function Estoque(){
                         estoques && estoques.map((estoque, key) => (
                             <EstoqueStyle key={key}>
                                 <strong>{estoque.produtoID}</strong>
-                                <strong className="align-right">{estoque.quantidade}</strong>
+                                <strong>{estoque.quantidade}</strong>
                                 <strong>{estoque.ativo === true ? "Sim": "Não"}</strong>
                                 <strong>
-                                <ButtonIcon>
-                                    <MdModeEdit size={20} onClick={() => getHandleEdit(estoque)} />
-                                </ButtonIcon>
-                                <ButtonIcon>
-                                    <MdDelete size={20} onClick={() => handleDelete(estoque._id)} />
-                                </ButtonIcon>
+                                    <ButtonIcon>
+                                        <MdModeEdit size={20} onClick={() => getHandleEdit(estoque)} />
+                                    </ButtonIcon>
+                                    <ButtonIcon>
+                                        <MdDelete size={20} onClick={() => handleDelete(estoque._id)} />
+                                    </ButtonIcon>
                                 </strong>
-                            </EstoqueStyle>    
+                            </EstoqueStyle>
                         ))
                     }
                 </ul>
