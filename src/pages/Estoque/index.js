@@ -24,9 +24,8 @@ export default function Estoque(){
 
     async function getEstoques(){
         const response = await api.get(`${type}${path}`);
-        const results = response.data;
 
-        if (results) setEstoques(results);
+        if (response.data) setEstoques(response.data);
     };
 
     useEffect(() => {
@@ -100,7 +99,7 @@ export default function Estoque(){
                         estoques && estoques.map((estoque, key) => (
                             <EstoqueStyle key={key}>
                                 <strong>{estoque.produtoID}</strong>
-                                <strong>{estoque.quantidade}</strong>
+                                <strong className="align-right">{estoque.quantidade}</strong>
                                 <strong>{estoque.ativo === true ? "Sim": "Não"}</strong>
                                 <strong>
                                 <ButtonIcon>
